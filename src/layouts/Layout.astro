@@ -1,0 +1,469 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'ARYNSA | Ingeniería y Construcción - Edificaciones, Supervisión y Gestión de Proyectos',
+  description = 'ARYNSA es una empresa peruana líder en construcción de edificaciones, elaboración de expedientes técnicos, supervisión y gerencia de proyectos, levantamiento topográfico y capacitación en Lean Construction. Más de 15 años de experiencia en el sector.',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  ogImage = '/og-image.jpg',
+} = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://arynsa.com.pe",
+  "name": "ARYNSA - Ingeniería y Construcción",
+  "alternateName": "ARYNSA",
+  "description": description,
+  "url": "https://arynsa.com.pe",
+  "logo": "https://arynsa.com.pe/logo.png",
+  "image": "https://arynsa.com.pe/og-image.jpg",
+  "telephone": "+51-XXX-XXX-XXX",
+  "email": "contacto@arynsa.com.pe",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lima",
+    "addressRegion": "Lima",
+    "addressCountry": "PE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-12.0464",
+    "longitude": "-77.0428"
+  },
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "priceRange": "$$",
+  "currenciesAccepted": "PEN",
+  "paymentAccepted": "Cash, Bank Transfer",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Perú"
+  },
+  "sameAs": [],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Construcción y Consultoría",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construcción en Edificaciones" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicios Generales" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elaboración de Expedientes Técnicos" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Supervisión y Gerencia de Proyectos" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Levantamiento Topográfico" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Capacitación Inhouse de Gestión de Proyectos y Lean Construction" } }
+    ]
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="author" content="ARYNSA - Ingeniería y Construcción" />
+    <meta name="keywords" content="construcción peru, constructora lima, consultora construcción, expedientes técnicos, supervisión proyectos, levantamiento topográfico, lean construction, gerencia proyectos peru, edificaciones peru, ARYNSA" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ARYNSA - Ingeniería y Construcción Peruana" />
+    <meta property="og:site_name" content="ARYNSA" />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+    <meta name="twitter:image:alt" content="ARYNSA - Ingeniería y Construcción Peruana" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1B2A4A" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <!-- Global Styles -->
+    <style is:global>
+      :root {
+        --color-primary: #1B2A4A;
+        --color-primary-dark: #0f1a30;
+        --color-primary-light: #243660;
+        --color-accent: #C8A84B;
+        --color-accent-dark: #a8882e;
+        --color-accent-light: #e2c46a;
+        --color-secondary: #2D4A7A;
+        --color-light: #F5F7FA;
+        --color-white: #ffffff;
+        --color-text-dark: #1a1a2e;
+        --color-text-muted: #6b7280;
+        --color-text-light: #9ca3af;
+        --color-border: #e5e7eb;
+        --color-border-light: #f3f4f6;
+        --color-success: #10b981;
+        --color-error: #ef4444;
+
+        --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-heading: 'Raleway', 'Inter', system-ui, sans-serif;
+
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+        --radius-sm: 0.25rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+        --radius-2xl: 1.5rem;
+        --radius-full: 9999px;
+
+        --transition-fast: 150ms ease;
+        --transition-base: 250ms ease;
+        --transition-slow: 400ms ease;
+        --transition-slower: 600ms ease;
+
+        --container-max: 1280px;
+        --container-pad: clamp(1rem, 5vw, 2rem);
+
+        --section-py: clamp(4rem, 10vw, 7rem);
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        color: var(--color-text-dark);
+        background-color: var(--color-white);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--color-primary);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color var(--transition-base);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: inherit;
+      }
+
+      input, textarea, select {
+        font-family: inherit;
+      }
+
+      /* Scroll reveal animation classes */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity var(--transition-slower), transform var(--transition-slower);
+      }
+
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity var(--transition-slower), transform var(--transition-slower);
+      }
+
+      .reveal-left.revealed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity var(--transition-slower), transform var(--transition-slower);
+      }
+
+      .reveal-right.revealed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity var(--transition-slower), transform var(--transition-slower);
+      }
+
+      .reveal-scale.revealed {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Delay utilities */
+      .delay-100 { transition-delay: 100ms; }
+      .delay-200 { transition-delay: 200ms; }
+      .delay-300 { transition-delay: 300ms; }
+      .delay-400 { transition-delay: 400ms; }
+      .delay-500 { transition-delay: 500ms; }
+      .delay-600 { transition-delay: 600ms; }
+
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: var(--container-max);
+        margin-inline: auto;
+        padding-inline: var(--container-pad);
+      }
+
+      /* Section spacing */
+      .section {
+        padding-block: var(--section-py);
+      }
+
+      /* Gold accent line */
+      .accent-line {
+        display: inline-block;
+        width: 60px;
+        height: 3px;
+        background: var(--color-accent);
+        border-radius: var(--radius-full);
+        margin-bottom: 1rem;
+      }
+
+      .accent-line-long {
+        width: 80px;
+      }
+
+      /* Section label */
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-label::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-accent);
+        border-radius: var(--radius-full);
+      }
+
+      /* Section title */
+      .section-title {
+        font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+      }
+
+      .section-title span {
+        color: var(--color-accent);
+      }
+
+      /* Section subtitle */
+      .section-subtitle {
+        font-size: clamp(1rem, 1.5vw, 1.125rem);
+        color: var(--color-text-muted);
+        line-height: 1.7;
+        max-width: 620px;
+      }
+
+      /* Primary button */
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 2rem;
+        background: var(--color-accent);
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border-radius: var(--radius-sm);
+        transition: all var(--transition-base);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.15);
+        transform: translateX(-100%);
+        transition: transform var(--transition-base);
+      }
+
+      .btn-primary:hover {
+        background: var(--color-accent-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-primary:hover::before {
+        transform: translateX(100%);
+      }
+
+      /* Secondary button */
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 2rem;
+        background: transparent;
+        color: var(--color-white);
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: 2px solid rgba(255,255,255,0.5);
+        border-radius: var(--radius-sm);
+        transition: all var(--transition-base);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: var(--color-white);
+        transform: translateY(-2px);
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-light);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-secondary);
+        border-radius: var(--radius-full);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-primary);
+      }
+
+      /* Selection */
+      ::selection {
+        background: var(--color-accent);
+        color: var(--color-primary);
+      }
+
+      /* Focus visible */
+      :focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
+        border-radius: var(--radius-sm);
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+
+    <!-- Global Scroll Reveal Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll(
+          '.reveal, .reveal-left, .reveal-right, .reveal-scale'
+        );
+
+        if (!revealElements.length) return;
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -80px 0px',
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        revealElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

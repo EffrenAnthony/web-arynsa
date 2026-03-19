@@ -1,0 +1,357 @@
+---
+const pillars = [
+  {
+    id: 'experiencia',
+    title: 'Experiencia Comprobada',
+    description:
+      'Más de 15 años ejecutando proyectos de construcción y consultoría en todo el Perú. Nuestro historial habla por nosotros: más de 200 proyectos completados exitosamente en sectores público y privado.',
+    icon: 'award',
+    color: '#1B2A4A',
+  },
+  {
+    id: 'calidad',
+    title: 'Calidad sin Compromisos',
+    description:
+      'Aplicamos procesos de control de calidad en cada etapa del proyecto. Utilizamos materiales y tecnologías certificadas para garantizar obras duraderas que superen las expectativas de nuestros clientes.',
+    icon: 'shield',
+    color: '#2D4A7A',
+  },
+  {
+    id: 'innovacion',
+    title: 'Innovación Constante',
+    description:
+      'Adoptamos las últimas metodologías como BIM, Lean Construction y gestión ágil de proyectos. Nuestra capacidad de innovar nos permite optimizar recursos, tiempos y costos en beneficio del cliente.',
+    icon: 'lightbulb',
+    color: '#C8A84B',
+  },
+  {
+    id: 'compromiso',
+    title: 'Compromiso Total',
+    description:
+      'Nos involucramos profundamente en cada proyecto, tratando los objetivos del cliente como propios. Nuestra comunicación transparente y proactividad garantizan tranquilidad durante todo el proceso.',
+    icon: 'handshake',
+    color: '#1B2A4A',
+  },
+];
+---
+
+<section class="why-us section" id="por-que-nosotros" aria-label="Por qué elegirnos">
+  <div class="container">
+    <div class="why-us-layout">
+      <!-- Left: Header + Image area -->
+      <div class="why-us-left">
+        <p class="section-label reveal">¿Por Qué ARYNSA?</p>
+        <h2 class="section-title reveal delay-100">
+          Su Éxito es<br />
+          Nuestro <span>Compromiso</span>
+        </h2>
+        <p class="section-subtitle reveal delay-200">
+          Elegir a ARYNSA significa contar con un socio estratégico que combina experiencia técnica,
+          rigor profesional y vocación de servicio para hacer realidad sus proyectos.
+        </p>
+
+        <!-- Values visual -->
+        <div class="why-us-visual reveal-scale delay-300" aria-hidden="true">
+          <div class="why-visual-card">
+            <div class="why-visual-card__pattern"></div>
+            <div class="why-visual-card__content">
+              <div class="why-visual-stat">
+                <div class="why-visual-stat__ring">
+                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+                    <circle cx="50" cy="50" r="45" stroke="#C8A84B" stroke-width="8" stroke-linecap="round"
+                      stroke-dasharray="250"
+                      stroke-dashoffset="30"
+                      transform="rotate(-90 50 50)"/>
+                  </svg>
+                  <div class="why-visual-stat__center">
+                    <span class="why-visual-stat__number">98%</span>
+                    <span class="why-visual-stat__label">Satisfacción</span>
+                  </div>
+                </div>
+                <p class="why-visual-stat__desc">de nuestros clientes vuelven a trabajar con nosotros</p>
+              </div>
+
+              <div class="why-visual-badges">
+                {['PMI', 'ISO 9001', 'BIM', 'Lean'].map((badge) => (
+                  <span class="why-visual-badge">{badge}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Pillars grid -->
+      <div class="why-us-pillars">
+        {pillars.map((pillar, index) => (
+          <div class={`pillar-card reveal delay-${index * 100 + 100}`} aria-label={pillar.title}>
+            <div class="pillar-card__icon-wrap" aria-hidden="true">
+              {pillar.icon === 'award' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="7"/>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+              )}
+              {pillar.icon === 'shield' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              )}
+              {pillar.icon === 'lightbulb' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="9" y1="18" x2="15" y2="18"/>
+                  <line x1="10" y1="22" x2="14" y2="22"/>
+                  <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+                </svg>
+              )}
+              {pillar.icon === 'handshake' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/>
+                </svg>
+              )}
+            </div>
+            <div class="pillar-card__content">
+              <h3 class="pillar-card__title">{pillar.title}</h3>
+              <p class="pillar-card__desc">{pillar.description}</p>
+            </div>
+            <!-- Number accent -->
+            <div class="pillar-card__number" aria-hidden="true">0{index + 1}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-us {
+    background: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-us::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 60%;
+    background: linear-gradient(135deg, transparent, rgba(245, 247, 250, 0.6));
+    pointer-events: none;
+  }
+
+  /* Layout */
+  .why-us-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  /* Left */
+  .why-us-left {
+    position: sticky;
+    top: 120px;
+  }
+
+  .why-us-left .section-subtitle {
+    margin-bottom: 2rem;
+  }
+
+  /* Visual card */
+  .why-us-visual {
+    margin-top: 2rem;
+  }
+
+  .why-visual-card {
+    background: var(--color-primary);
+    border-radius: var(--radius-2xl);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-visual-card__pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .why-visual-card__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-visual-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-visual-stat__ring {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+  }
+
+  .why-visual-stat__ring svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .why-visual-stat__center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    gap: 2px;
+  }
+
+  .why-visual-stat__number {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+  }
+
+  .why-visual-stat__label {
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  .why-visual-stat__desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+
+  .why-visual-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .why-visual-badge {
+    padding: 0.35rem 0.875rem;
+    background: rgba(200, 168, 75, 0.15);
+    border: 1px solid rgba(200, 168, 75, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+  }
+
+  /* Pillars */
+  .why-us-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pillar-card {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-slow);
+  }
+
+  .pillar-card:hover {
+    transform: translateX(6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+  }
+
+  .pillar-card:hover .pillar-card__icon-wrap {
+    background: var(--color-primary);
+    color: var(--color-accent);
+  }
+
+  .pillar-card__icon-wrap {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background: var(--color-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: background-color var(--transition-base), color var(--transition-base);
+  }
+
+  .pillar-card__content {
+    flex: 1;
+  }
+
+  .pillar-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-card__desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .pillar-card__number {
+    position: absolute;
+    top: -10px;
+    right: 1rem;
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    color: rgba(27, 42, 74, 0.04);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    transition: color var(--transition-base);
+  }
+
+  .pillar-card:hover .pillar-card__number {
+    color: rgba(200, 168, 75, 0.08);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .why-us-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .why-us-left {
+      position: static;
+    }
+
+    .why-us-visual {
+      max-width: 480px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pillar-card {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,429 @@
+---
+const stats = [
+  {
+    number: 15,
+    suffix: '+',
+    label: 'Años de Experiencia',
+    description: 'Trayectoria sólida en el sector',
+    icon: 'clock',
+  },
+  {
+    number: 200,
+    suffix: '+',
+    label: 'Proyectos Ejecutados',
+    description: 'Obras completadas con éxito',
+    icon: 'check-circle',
+  },
+  {
+    number: 50,
+    suffix: '+',
+    label: 'Profesionales',
+    description: 'Equipo multidisciplinario certificado',
+    icon: 'users',
+  },
+  {
+    number: 98,
+    suffix: '%',
+    label: 'Clientes Satisfechos',
+    description: 'Tasa de satisfacción comprobada',
+    icon: 'star',
+  },
+];
+---
+
+<section class="stats-section" id="estadisticas" aria-label="Estadísticas de ARYNSA">
+  <!-- Decorative top border -->
+  <div class="stats-border-top" aria-hidden="true">
+    <div class="stats-border-line"></div>
+  </div>
+
+  <div class="container">
+    <div class="stats-header reveal">
+      <p class="section-label section-label--light">Nuestros Números</p>
+      <h2 class="section-title stats-title">
+        Resultados que <span>Hablan</span> por Sí Mismos
+      </h2>
+    </div>
+
+    <div class="stats-grid">
+      {stats.map((stat, index) => (
+        <div class={`stat-item reveal delay-${index * 150}`}>
+          <!-- Icon -->
+          <div class="stat-item__icon" aria-hidden="true">
+            {stat.icon === 'clock' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            )}
+            {stat.icon === 'check-circle' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            )}
+            {stat.icon === 'users' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            )}
+            {stat.icon === 'star' && (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            )}
+          </div>
+
+          <!-- Number -->
+          <div class="stat-item__number-wrap">
+            <span
+              class="stat-item__number js-counter"
+              data-target={stat.number}
+              data-suffix={stat.suffix}
+              aria-label={`${stat.number}${stat.suffix} ${stat.label}`}
+            >
+              0
+            </span>
+            <span class="stat-item__suffix" aria-hidden="true">{stat.suffix}</span>
+          </div>
+
+          <!-- Label & Description -->
+          <h3 class="stat-item__label">{stat.label}</h3>
+          <p class="stat-item__desc">{stat.description}</p>
+
+          <!-- Divider (not on last) -->
+          {index < stats.length - 1 && (
+            <div class="stat-divider" aria-hidden="true"></div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA band -->
+    <div class="stats-cta-band reveal">
+      <div class="stats-cta-band__content">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        <p>Cada número representa la confianza de nuestros clientes y la dedicación de nuestro equipo.</p>
+      </div>
+      <a href="#contacto" class="stats-cta-btn">
+        Únete a nuestros clientes satisfechos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Decorative bottom border -->
+  <div class="stats-border-bottom" aria-hidden="true">
+    <div class="stats-border-line"></div>
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    background: var(--color-primary);
+    position: relative;
+    overflow: hidden;
+    padding-block: var(--section-py);
+  }
+
+  /* Background decoration */
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .stats-section::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 168, 75, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Top/Bottom borders */
+  .stats-border-top,
+  .stats-border-bottom {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .stats-border-line {
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #C8A84B, #e2c46a, #C8A84B, transparent);
+  }
+
+  /* Header */
+  .stats-header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .section-label--light {
+    color: #C8A84B;
+  }
+
+  .section-label--light::before {
+    background: #C8A84B;
+  }
+
+  .stats-title {
+    color: var(--color-white) !important;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  }
+
+  .stats-title span {
+    color: #C8A84B;
+  }
+
+  /* Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem;
+  }
+
+  /* Stat Item */
+  .stat-item {
+    position: relative;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    transition: background-color var(--transition-base);
+  }
+
+  .stat-item:hover {
+    background: rgba(255,255,255,0.03);
+    border-radius: var(--radius-xl);
+  }
+
+  /* Icon */
+  .stat-item__icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(200, 168, 75, 0.12);
+    border: 1px solid rgba(200, 168, 75, 0.25);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8A84B;
+    margin-bottom: 0.5rem;
+    transition: background-color var(--transition-base), transform var(--transition-base);
+  }
+
+  .stat-item:hover .stat-item__icon {
+    background: #C8A84B;
+    color: var(--color-primary);
+    transform: scale(1.1);
+  }
+
+  /* Number */
+  .stat-item__number-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    line-height: 1;
+  }
+
+  .stat-item__number {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-item__suffix {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-weight: 900;
+    color: #C8A84B;
+    font-family: var(--font-heading);
+  }
+
+  /* Label */
+  .stat-item__label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+  }
+
+  /* Description */
+  .stat-item__desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+  }
+
+  /* Divider between items */
+  .stat-divider {
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+  }
+
+  /* CTA Band */
+  .stats-cta-band {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.75rem 2.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-xl);
+    position: relative;
+    z-index: 1;
+  }
+
+  .stats-cta-band__content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255,255,255,0.65);
+    flex: 1;
+    min-width: 0;
+  }
+
+  .stats-cta-band__content svg {
+    flex-shrink: 0;
+    color: #C8A84B;
+  }
+
+  .stats-cta-band__content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .stats-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+  }
+
+  .stats-cta-btn:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(200,168,75,0.35);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-divider {
+      display: none;
+    }
+
+    .stat-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-cta-band {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .stats-cta-band__content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Animated counter
+  function animateCounter(el: HTMLElement) {
+    const target = parseInt(el.getAttribute('data-target') || '0', 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    function update(currentTime: number) {
+      const elapsed = currentTime - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current.toString();
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target.toString();
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          animateCounter(el);
+          counterObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll('.js-counter').forEach((el) => {
+    counterObserver.observe(el);
+  });
+</script>

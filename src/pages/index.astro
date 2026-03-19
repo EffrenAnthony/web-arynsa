@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import WhyUs from '../components/WhyUs.astro';
+import Stats from '../components/Stats.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="ARYNSA | Ingeniería y Construcción - Edificaciones, Supervisión y Gestión de Proyectos"
+  description="ARYNSA es una empresa peruana líder en construcción de edificaciones, elaboración de expedientes técnicos, supervisión y gerencia de proyectos, levantamiento topográfico y capacitación en Lean Construction. Más de 15 años de experiencia. Contáctenos en Lima, Perú."
+  canonicalURL="https://arynsa.com.pe/"
+>
+  <Navigation />
+  <main id="main-content" role="main">
+    <Hero />
+    <About />
+    <Services />
+    <WhyUs />
+    <Stats />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

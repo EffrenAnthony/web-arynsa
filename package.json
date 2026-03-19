@@ -1,0 +1,17 @@
+{
+  "name": "web-arynsa",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de ARYNSA - Constructora y Consultora Peruana",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.1.6",
+    "astro": "^4.5.0"
+  }
+}

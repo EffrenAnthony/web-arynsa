@@ -175,6 +175,11 @@ const companyLinks = [
     </div>
   </div>
 
+  <!-- Developer credit -->
+  <div class="footer-dev-credit">
+    <p>Built with ☕ &amp; ❤️ by <a href="https://getbable.com/" target="_blank" rel="noopener noreferrer" class="footer-dev-link">Bable</a></p>
+  </div>
+
   <!-- Back to top button -->
   <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio de la página">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -494,6 +499,30 @@ const companyLinks = [
   .footer-location svg {
     color: rgba(255, 255, 255, 0.4);
     opacity: 1;
+  }
+
+  /* Developer credit */
+  .footer-dev-credit {
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .footer-dev-credit p {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-dev-link {
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-base);
+  }
+
+  .footer-dev-link:hover {
+    color: var(--color-accent);
   }
 
   /* Back to top */

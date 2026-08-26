@@ -54,7 +54,7 @@
 
     <p class="hero-subtitle">
       Somos ARYNSA, empresa líder en construcción, consultoría y supervisión de proyectos en el Perú.
-      Transformamos visiones en realidades con más de 15 años de experiencia y un equipo de profesionales comprometidos
+      Transformamos visiones en realidades con experiencia técnica comprobada y un equipo de profesionales comprometidos
       con la calidad y la innovación.
     </p>
 
@@ -71,29 +71,6 @@
         </svg>
         Contáctanos
       </a>
-    </div>
-
-    <!-- Quick stats bar -->
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <strong>15+</strong>
-        <span>Años de experiencia</span>
-      </div>
-      <div class="hero-stat-divider" aria-hidden="true"></div>
-      <div class="hero-stat">
-        <strong>200+</strong>
-        <span>Proyectos completados</span>
-      </div>
-      <div class="hero-stat-divider" aria-hidden="true"></div>
-      <div class="hero-stat">
-        <strong>50+</strong>
-        <span>Profesionales</span>
-      </div>
-      <div class="hero-stat-divider" aria-hidden="true"></div>
-      <div class="hero-stat">
-        <strong>6</strong>
-        <span>Líneas de servicio</span>
-      </div>
     </div>
   </div>
 
@@ -404,53 +381,6 @@
     flex-direction: row-reverse;
   }
 
-  /* Stats bar */
-  .hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0;
-    padding: 1.5rem 2rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    animation: fadeSlideUp 0.8s ease 0.8s both;
-    width: fit-content;
-  }
-
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-inline: 1.75rem;
-    gap: 0.25rem;
-  }
-
-  .hero-stat strong {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 900;
-    color: #C8A84B;
-    font-family: var(--font-heading);
-    line-height: 1;
-  }
-
-  .hero-stat span {
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.55);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  .hero-stat-divider {
-    width: 1px;
-    background: rgba(255, 255, 255, 0.12);
-    align-self: stretch;
-    flex-shrink: 0;
-  }
-
   /* Scroll indicator */
   .scroll-indicator {
     position: absolute;
@@ -499,15 +429,6 @@
       font-size: clamp(2rem, 8vw, 3rem);
     }
 
-    .hero-stats {
-      gap: 0;
-      padding: 1rem 0.5rem;
-    }
-
-    .hero-stat {
-      padding-inline: 1rem;
-    }
-
     .hero-ctas {
       flex-direction: column;
       align-items: flex-start;
@@ -516,22 +437,6 @@
     .float-el--2,
     .float-el--3 {
       display: none;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .hero-stat-divider {
-      display: none;
-    }
-
-    .hero-stat {
-      padding: 0.75rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
   }
 </style>

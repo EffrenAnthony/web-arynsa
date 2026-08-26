@@ -4,7 +4,7 @@ const pillars = [
     id: 'experiencia',
     title: 'Experiencia Comprobada',
     description:
-      'Más de 15 años ejecutando proyectos de construcción y consultoría en todo el Perú. Nuestro historial habla por nosotros: más de 200 proyectos completados exitosamente en sectores público y privado.',
+      'Ejecutamos proyectos de construcción y consultoría en todo el Perú. Nuestro historial habla por nosotros: obras completadas exitosamente en los sectores público y privado.',
     icon: 'award',
     color: '#1B2A4A',
   },
@@ -55,22 +55,9 @@ const pillars = [
           <div class="why-visual-card">
             <div class="why-visual-card__pattern"></div>
             <div class="why-visual-card__content">
-              <div class="why-visual-stat">
-                <div class="why-visual-stat__ring">
-                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="50" cy="50" r="45" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
-                    <circle cx="50" cy="50" r="45" stroke="#C8A84B" stroke-width="8" stroke-linecap="round"
-                      stroke-dasharray="250"
-                      stroke-dashoffset="30"
-                      transform="rotate(-90 50 50)"/>
-                  </svg>
-                  <div class="why-visual-stat__center">
-                    <span class="why-visual-stat__number">98%</span>
-                    <span class="why-visual-stat__label">Satisfacción</span>
-                  </div>
-                </div>
-                <p class="why-visual-stat__desc">de nuestros clientes vuelven a trabajar con nosotros</p>
-              </div>
+              <p class="why-visual-intro">
+                Nuestros clientes vuelven a trabajar con nosotros proyecto tras proyecto.
+              </p>
 
               <div class="why-visual-badges">
                 {['PMI', 'ISO 9001', 'BIM', 'Lean'].map((badge) => (
@@ -188,55 +175,11 @@ const pillars = [
     z-index: 1;
   }
 
-  .why-visual-stat {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  .why-visual-intro {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
     margin-bottom: 1.5rem;
-  }
-
-  .why-visual-stat__ring {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    flex-shrink: 0;
-  }
-
-  .why-visual-stat__ring svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .why-visual-stat__center {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    gap: 2px;
-  }
-
-  .why-visual-stat__number {
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: var(--color-accent);
-    font-family: var(--font-heading);
-  }
-
-  .why-visual-stat__label {
-    font-size: 0.55rem;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 600;
-  }
-
-  .why-visual-stat__desc {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.5;
   }
 
   .why-visual-badges {
